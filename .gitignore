@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Base de Datos local (SQLite)
+*.db
+*.sqlite3
+
+# Variables de entorno (Secretos)
+.env
+
+# FastAPI / IDEs
+.vscode/
+.idea/
+.fastapi_docs/
