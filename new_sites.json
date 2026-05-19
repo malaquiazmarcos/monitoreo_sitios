@@ -1,0 +1,26 @@
+[
+    {
+        "name": "ahoraCity", 
+        "url": "https://ahoracity.com/"
+    },
+    {
+        "name": "San Rafael CG",
+        "url": "https://sanrafaelcg.com.ar/"
+    },
+    {
+        "name": "El Fulbito",
+        "url": "https://predioelfulbito.pythonanywhere.com/"
+    },
+    {
+        "name": "WanderVibes",
+        "url": "https://wandervibes.pythonanywhere.com/"
+    },
+    {
+        "name": "Units Bridge API",
+        "url": "https://unitbridgeapi.pythonanywhere.com/"
+    },
+    {
+        "name": "Units Forge",
+        "url": "https://unit-forge-silk.vercel.app/"
+    }
+]
