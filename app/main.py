@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
     # Crear tablas si no existen
     SQLModel.metadata.create_all(engine)
     
-    # Carga inicial desde JSON si la DB está vacía (ideal para entornos efímeros como Render Free)
+    # Carga inicial desde JSON si la DB está vacía (usamos esto para entornos efímeros como Render Free)
     with Session(engine) as session:
         statement = select(Site)
         existing_sites = session.exec(statement).first()
@@ -36,7 +36,14 @@ async def lifespan(app: FastAPI):
     asyncio.create_task(monitor_all_sites_loop())
     yield
 
-app = FastAPI(title="Monitor de Sitios Pro", lifespan=lifespan)
+app = FastAPI(title="Monitor de Sitios", 
+            description="Monitoreo automático de sitios web con alertas en Discord",
+            version="1.0.0",
+            lifespan=lifespan)
 
 # Incluimos las rutas del módulo sites
 app.include_router(sites.router)
+
+@app.get("/ping")
+def chequear_estado():
+    return {"estado": "ok", "mensaje":"la api esta viva"}

@@ -1,0 +1,26 @@
+name CI - Pruebas del monitoreo de APPS
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs: 
+  ejecutar-tests:
+  runs-on: ubuntu-latest
+
+  steps:
+
+  - name Descargar código del repo
+  users: actions/checkout@v4
+
+  - name: Instalar Python 
+  users: actions/setups-python@v5
+  with:
+    python-version '3.10'
+
+  - name: Instalar depencencias
+  run: pip install fastapi httpx pytest
+
+  - name: Ejecutar pytest
+  run: python -m pytest tests/test_ping.py
