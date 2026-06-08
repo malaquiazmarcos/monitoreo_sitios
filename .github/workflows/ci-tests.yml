@@ -1,4 +1,4 @@
-name CI - Pruebas del monitoreo de APPS
+name: CI - Pruebas del monitoreo de APPS
 
 on: 
   push:
