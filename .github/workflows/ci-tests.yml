@@ -24,3 +24,6 @@ jobs:
 
       - name: Ejecutar pytest
         run: python -m pytest tests/test_ping.py
+
+      - name: Avisar a Render sobre el despliegue
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
